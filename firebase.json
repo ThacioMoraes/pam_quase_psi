@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      "**/.*",
+      "README.md",
+      "google-apps-script.js"
+    ]
+  }
+}
