@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pam | @pamquasepsi</title>
+<meta name="description" content="Lista de espera para atendimento em 2027 e materiais sobre psicologia com Pamela (@pamquasepsi).">
+<meta property="og:title" content="Pam | @pamquasepsi">
+<meta property="og:description" content="Lista de espera para atendimento em 2027 e materiais sobre psicologia.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -18,22 +25,32 @@
 :root[data-theme="dark"]{--bg:#2b1b0f;--text:#f8f1e7;--card:#3a2615;--line:#55391f;--btn:#c4607a;--btn-text:#2b1b0f;--muted:#d9c4ae}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.5 'Nunito',system-ui,sans-serif}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.5 'Nunito',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 main{max-width:480px;margin:0 auto;padding:44px 20px 40px}
 header{text-align:center;margin-bottom:34px}
 .avatar{width:104px;height:104px;border-radius:50%;margin:0 auto 16px;object-fit:cover;display:block;background:var(--berry);box-shadow:0 0 0 4px var(--bg),0 0 0 7px var(--terra)}
 h1{font:600 32px/1.15 'Fraunces',Georgia,serif;margin:0 0 6px}
 header p{margin:0;color:var(--muted)}
-section{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:24px 22px;margin-bottom:20px}
+section{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:24px 22px;margin-bottom:20px;box-shadow:0 4px 18px rgba(95,59,31,.04)}
 h2{font:600 22px/1.2 'Fraunces',Georgia,serif;margin:0 0 6px}
 .lead{margin:0 0 18px;color:var(--muted);font-size:16px}
 label{display:block;font-weight:700;font-size:15px;margin:14px 0 6px}
-input,textarea{width:100%;font:inherit;color:var(--text);background:var(--bg);border:2px solid var(--line);border-radius:16px;padding:12px 14px}
+input,textarea{width:100%;font:inherit;color:var(--text);background:var(--bg);border:2px solid var(--line);border-radius:16px;padding:12px 14px;transition:border-color .2s ease,outline .2s ease}
 textarea{min-height:92px;resize:vertical}
 input:focus-visible,textarea:focus-visible,.btn:focus-visible,.pro a:focus-visible{outline:3px solid var(--terra);outline-offset:2px}
-.btn{display:block;width:100%;margin-top:20px;min-height:52px;padding:14px 20px;border:0;border-radius:999px;background:var(--btn);color:var(--btn-text);font:700 17px 'Nunito',sans-serif;text-align:center;text-decoration:none;cursor:pointer;box-shadow:0 5px 0 rgba(95,59,31,.25)}
-.btn:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(95,59,31,.25)}
-.status{margin:12px 0 0;font-size:15px;min-height:1.4em}
+.btn{display:block;width:100%;margin-top:20px;min-height:52px;padding:14px 20px;border:0;border-radius:999px;background:var(--btn);color:var(--btn-text);font:700 17px 'Nunito',sans-serif;text-align:center;text-decoration:none;cursor:pointer;box-shadow:0 5px 0 rgba(95,59,31,.25);transition:transform .1s ease,box-shadow .1s ease,opacity .2s ease}
+.btn:active:not(:disabled){transform:translateY(3px);box-shadow:0 2px 0 rgba(95,59,31,.25)}
+.btn:disabled{opacity:.65;cursor:not-allowed;transform:none;box-shadow:none}
+.status{margin:14px 0 0;font-size:15px;min-height:1.4em;line-height:1.4;border-radius:14px;transition:all .2s ease}
+.status.success{color:#234e2c;background:#eaf5ec;padding:12px 16px;border:1px solid #c2e2cb;font-weight:600}
+.status.error{color:#842232;background:#faecee;padding:12px 16px;border:1px solid #f3c2c9;font-weight:600}
+.status.info{color:var(--text);background:rgba(218,115,87,.12);padding:10px 14px;border:1px solid rgba(218,115,87,.25)}
+:root[data-theme="dark"] .status.success{color:#a3e7b5;background:#183620;border-color:#2b5937}
+:root[data-theme="dark"] .status.error{color:#f9aab5;background:#441720;border-color:#6d2432}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .status.success{color:#a3e7b5;background:#183620;border-color:#2b5937}
+  :root:not([data-theme="light"]) .status.error{color:#f9aab5;background:#441720;border-color:#6d2432}
+}
 .pdf{border-left:8px solid var(--terra)}
 .pro{display:flex;gap:14px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
 .pro:first-of-type{border-top:0;padding-top:4px}
@@ -56,93 +73,178 @@ footer{text-align:center;color:var(--muted);font-size:14px;margin-top:26px}
 
   <section aria-labelledby="t-lista">
     <h2 id="t-lista">Lista de espera 2027</h2>
-    <p class="lead">Quer atendimento no ano que vem? Deixe seu contato e eu te aviso quando abrirem as vagas.</p>
+    <p class="lead">Quer atendimento no ano que vem? Deixe seu contato e eu te aviso assim que abrirem as vagas.</p>
     <form id="form" novalidate>
       <label for="nome">Seu nome</label>
-      <input id="nome" name="nome" autocomplete="name" required>
+      <input id="nome" name="nome" autocomplete="name" placeholder="Como você prefere ser chamado(a)?" required>
+
       <label for="zap">Seu WhatsApp</label>
-      <input id="zap" name="zap" type="tel" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" required>
+      <input id="zap" name="zap" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 99415-8358" required maxlength="15">
+
       <label for="obs">Algo que você gostaria que eu soubesse sobre você? (opcional)</label>
       <textarea id="obs" name="obs" placeholder="Fique à vontade para escrever o que quiser"></textarea>
-      <button class="btn" type="submit">Entrar na lista de espera</button>
-      <p class="status" id="status" role="status"></p>
+
+      <button class="btn" id="btn-submit" type="submit">Se inscrever na lista de espera</button>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
     </form>
   </section>
 
   <section class="pdf" aria-labelledby="t-pdf">
     <h2 id="t-pdf">Modelo cognitivo e metacognição</h2>
-    <p class="lead">Planilha gratuita para entender como pensamentos, emoções e comportamentos se conectam, e como observar o próprio pensar.</p>
+    <p class="lead">Planilha e material gratuito para entender como pensamentos, emoções e comportamentos se conectam, e como observar o próprio pensar.</p>
     <button class="btn" id="pdf" type="button">Solicitar planilha no WhatsApp</button>
-    <p class="status" id="pdfstatus" role="status"></p>
+    <p class="status" id="pdfstatus" role="status" aria-live="polite"></p>
   </section>
 
   <section aria-labelledby="t-pro">
     <h2 id="t-pro">Enquanto eu ainda não me formo, aqui estão profissionais que eu indico</h2>
     <p class="lead">Psis em quem eu confio. Dá uma olhada no perfil deles.</p>
-    <div class="pro"><div class="dot" aria-hidden="true">E</div><div><b>@psi.enzonunes</b><span>Instagram</span></div><a href="https://www.instagram.com/psi.enzonunes" target="_blank" rel="noopener">Ver perfil</a></div>
-    <div class="pro"><div class="dot" aria-hidden="true">V</div><div><b>@v.annat</b><span>Instagram</span></div><a href="https://www.instagram.com/v.annat" target="_blank" rel="noopener">Ver perfil</a></div>
+    <div class="pro">
+      <div class="dot" aria-hidden="true">E</div>
+      <div><b>@psi.enzonunes</b><span>Instagram</span></div>
+      <a href="https://www.instagram.com/psi.enzonunes" target="_blank" rel="noopener">Ver perfil</a>
+    </div>
+    <div class="pro">
+      <div class="dot" aria-hidden="true">V</div>
+      <div><b>@v.annat</b><span>Instagram</span></div>
+      <a href="https://www.instagram.com/v.annat" target="_blank" rel="noopener">Ver perfil</a>
+    </div>
   </section>
 
   <footer>@pamquasepsi</footer>
 </main>
+
 <script>
-// Telefone oficial (+55 11 994158358)
-var WHATSAPP = "5511994158358";
+/**
+ * =======================================================================
+ * CONFIGURAÇÃO DO PROJETO (@pamquasepsi)
+ * =======================================================================
+ */
 
-// URL do Google Apps Script configurado na planilha do Google Drive da Pamela
-var GOOGLE_SCRIPT_URL = "";
+// 1. Número oficial de WhatsApp (formato internacional sem caracteres especiais)
+// Telefone: +55 11 994158358
+const WHATSAPP_NUMERO = "5511994158358";
 
-var form = document.getElementById("form");
-var status = document.getElementById("status");
+// 2. URL do Google Apps Script (gerada na implantação da planilha do Google Drive)
+// Siga as instruções do arquivo 'google-apps-script.js' ou do README.md para obter a sua URL.
+// Exemplo: "https://script.google.com/macros/s/AKfycbx.../exec"
+const GOOGLE_SCRIPT_URL = "";
 
-form.addEventListener("submit", function(e){
+// Elementos do Formulário de Inscrição
+const form = document.getElementById("form");
+const btnSubmit = document.getElementById("btn-submit");
+const statusEl = document.getElementById("status");
+const zapInput = document.getElementById("zap");
+
+// Máscara dinâmica para o telefone (WhatsApp brasileiro)
+zapInput.addEventListener("input", function(e) {
+  let v = e.target.value.replace(/\D/g, "");
+  if (v.length > 11) v = v.slice(0, 11);
+  if (v.length > 6) {
+    v = "(" + v.slice(0, 2) + ") " + v.slice(2, 7) + "-" + v.slice(7);
+  } else if (v.length > 2) {
+    v = "(" + v.slice(0, 2) + ") " + v.slice(2);
+  } else if (v.length > 0) {
+    v = "(" + v;
+  }
+  e.target.value = v;
+});
+
+// Envio do formulário com persistência no Google Drive
+form.addEventListener("submit", async function(e) {
   e.preventDefault();
-  var nome = form.nome.value.trim();
-  var zap = form.zap.value.trim();
-  var obs = form.obs.value.trim();
 
-  if(!nome || !zap){
-    status.textContent = "Preencha seu nome e WhatsApp.";
+  const nome = form.nome.value.trim();
+  const zap = form.zap.value.trim();
+  const obs = form.obs.value.trim();
+
+  // Validação básica dos campos obrigatórios
+  if (!nome || !zap) {
+    mostrarStatus(statusEl, "Por favor, preencha seu nome e seu WhatsApp.", "error");
     return;
   }
 
-  if(!GOOGLE_SCRIPT_URL){
-    status.textContent = "A URL da planilha ainda não foi configurada no script.";
+  // Verifica se o WhatsApp tem dígitos suficientes (mínimo DDD + 8 dígitos)
+  const apenasNumeros = zap.replace(/\D/g, "");
+  if (apenasNumeros.length < 10) {
+    mostrarStatus(statusEl, "Por favor, informe um WhatsApp válido com DDD.", "error");
     return;
   }
 
-  var btn = form.querySelector("button[type='submit']");
-  btn.disabled = true;
-  var btnTxt = btn.textContent;
-  btn.textContent = "Enviando…";
-  status.textContent = "Salvando na lista de espera…";
+  // Verifica se o Google Apps Script já foi configurado
+  if (!GOOGLE_SCRIPT_URL) {
+    mostrarStatus(
+      statusEl,
+      "Quase lá! Para salvar na planilha do Google Drive, adicione a URL do Google Apps Script na variável GOOGLE_SCRIPT_URL no código.",
+      "info"
+    );
+    return;
+  }
 
-  var fd = new FormData();
-  fd.append("nome", nome);
-  fd.append("zap", zap);
-  fd.append("obs", obs);
+  // Estado de envio / carregamento
+  btnSubmit.disabled = true;
+  const textoOriginalBotao = btnSubmit.textContent;
+  btnSubmit.textContent = "Salvando sua inscrição…";
+  mostrarStatus(statusEl, "Gravando seus dados na lista de espera…", "info");
 
-  fetch(GOOGLE_SCRIPT_URL, {
-    method: "POST",
-    mode: "no-cors",
-    body: fd
-  }).then(function(){
-    status.textContent = "Inscrição confirmada na lista de espera!";
+  try {
+    // Envia os dados como FormData usando mode: 'no-cors' para compatibilidade perfeita com o Google Apps Script
+    const formData = new FormData();
+    formData.append("nome", nome);
+    formData.append("zap", zap);
+    formData.append("obs", obs);
+
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      body: formData,
+      mode: "no-cors"
+    });
+
+    // Feedback de sucesso
+    mostrarStatus(
+      statusEl,
+      "✓ Inscrição confirmada na lista de espera! Em breve a Pamela entrará em contato.",
+      "success"
+    );
     form.reset();
-  }).catch(function(err){
-    status.textContent = "Erro ao salvar. Tente novamente.";
-  }).finally(function(){
-    btn.disabled = false;
-    btn.textContent = btnTxt;
-  });
+
+  } catch (erro) {
+    console.error("Erro ao persistir na planilha:", erro);
+    mostrarStatus(
+      statusEl,
+      "Ocorreu uma instabilidade ao salvar. Por favor, tente novamente em instantes.",
+      "error"
+    );
+  } finally {
+    btnSubmit.disabled = false;
+    btnSubmit.textContent = textoOriginalBotao;
+  }
 });
 
-document.getElementById("pdf").addEventListener("click", function(){
-  var s = document.getElementById("pdfstatus");
-  s.textContent = "Abrindo o WhatsApp…";
-  var msg = "Olá Pamela! Pode me mandar a planilha sobre modelo cognitivo e metacognição?";
-  window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg), "_blank");
+// Ação do Botão: Solicitar planilha por WhatsApp
+const btnPdf = document.getElementById("pdf");
+const pdfStatus = document.getElementById("pdfstatus");
+
+btnPdf.addEventListener("click", function() {
+  const mensagem = "Olá Pamela! Gostaria de receber a planilha de modelo cognitivo e metacognição.";
+  const urlWhatsapp = "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(mensagem);
+
+  mostrarStatus(pdfStatus, "Redirecionando para o WhatsApp…", "info");
+  
+  // Abre o WhatsApp com a mensagem pronta para o número especificado
+  window.open(urlWhatsapp, "_blank", "noopener,noreferrer");
+
+  setTimeout(function() {
+    pdfStatus.textContent = "";
+    pdfStatus.className = "status";
+  }, 4000);
 });
+
+// Função auxiliar para atualizar mensagens de status
+function mostrarStatus(elemento, texto, tipo) {
+  elemento.textContent = texto;
+  elemento.className = "status " + (tipo || "");
+}
 </script>
 </body>
 </html>
