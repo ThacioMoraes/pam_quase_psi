@@ -88,8 +88,8 @@ footer{text-align:center;color:var(--muted);font-size:14px;margin-top:26px}
 
   <section class="pdf" aria-labelledby="t-pdf">
     <h2 id="t-pdf">Modelo cognitivo e metacognição</h2>
-    <p class="lead">Planilha e material gratuito para entender como pensamentos, emoções e comportamentos se conectam, e como observar o próprio pensar.</p>
-    <button class="btn" id="pdf" type="button">Solicitar planilha no WhatsApp</button>
+    <p class="lead">PDF gratuito para entender como pensamentos, emoções e comportamentos se conectam, e como observar o próprio pensar.</p>
+    <button class="btn" id="pdf" type="button">Pedir o PDF no WhatsApp</button>
     <p class="status" id="pdfstatus" role="status" aria-live="polite"></p>
   </section>
 
@@ -218,12 +218,12 @@ form.addEventListener("submit", async function(e) {
   }
 });
 
-// Ação do Botão: Solicitar planilha por WhatsApp
+// Ação do Botão: Pedir PDF por WhatsApp
 const btnPdf = document.getElementById("pdf");
 const pdfStatus = document.getElementById("pdfstatus");
 
 btnPdf.addEventListener("click", function() {
-  const mensagem = "Olá Pâmela! Gostaria de receber a planilha de modelo cognitivo e metacognição.";
+  const mensagem = "Olá Pâmela! Gostaria de receber o PDF sobre modelo cognitivo e metacognição.";
   const urlWhatsapp = "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(mensagem);
 
   mostrarStatus(pdfStatus, "Redirecionando para o WhatsApp…", "info");

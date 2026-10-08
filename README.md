@@ -10,9 +10,9 @@ Página de apresentação e captura de contatos da **Pamela** ([@pamquasepsi](ht
    - Formulário com validação de campos obrigatórios (*Nome* e *WhatsApp* com máscara brasileira).
    - Persistência direta em planilha no **Google Drive** da Pamela (via Google Apps Script, 100% gratuito e sem intermediários).
    - Feedback em tempo real com indicador de carregamento e mensagem de sucesso/erro.
-2. **Solicitação de Planilha por WhatsApp**:
+2. **Solicitação de PDF por WhatsApp**:
    - Botão direto com redirecionamento para o telefone **+55 11 994158358**.
-   - Mensagem pronta e pré-formatada: `"Olá Pamela! Gostaria de receber a planilha de modelo cognitivo e metacognição."`.
+   - Mensagem pronta e pré-formatada: `"Olá Pamela! Gostaria de receber a PDF sobre modelo cognitivo e metacognição."`.
 3. **Indicação de Profissionais**:
    - Links para os perfis dos psicólogos recomendados.
 4. **Hospedagem no GitHub Pages**:
@@ -72,4 +72,4 @@ Para que as inscrições sejam salvas automaticamente em uma planilha da Pamela:
 O botão de solicitar planilha aponta para:
 - **Número**: `+55 11 994158358` (`5511994158358`)
 - **Link**: `https://wa.me/5511994158358?text=...`
-- **Mensagem**: `Olá Pamela! Gostaria de receber a planilha de modelo cognitivo e metacognição.`
+- **Mensagem**: `Olá Pamela! Gostaria de receber a PDF sobre modelo cognitivo e metacognição.`
